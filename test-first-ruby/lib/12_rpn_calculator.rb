@@ -9,6 +9,7 @@ class RPNCalculator
   		@stack.push(num)  
   end
 
+  # This and the other methods can also be done by using @stack.pop(2), which creates a new array with just those values, which I discovered when seeking help for the evaluate method below. I kept it this way because that's how I had it originally.
   def plus()
   		error?
   		@stack.push(@stack.pop + @stack.pop)
