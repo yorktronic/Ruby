@@ -1,3 +1,4 @@
+# I had to consult the internet on this one - for some reason I missed options hashes in the reading and I also had a little trouble with the subclasses (most notably that super is the tool you use to pull in inhereted methods). I totally get it now!
 class Temperature
    def initialize(opts = {})
    	@opts = opts
@@ -5,12 +6,12 @@ class Temperature
 
 	def in_celsius()
 		return @opts[:c] if @opts[:c] != nil
-		self.ftoc(@opts[:f])
+		Temperature.ftoc(@opts[:f])
 	end
 
 	def in_fahrenheit()
 		return @opts[:f] if @opts[:f] != nil
-		self.ctof(@opts[:c])
+		Temperature.ctof(@opts[:c])
 	end
 	
 	def self.from_celsius(tempC)
