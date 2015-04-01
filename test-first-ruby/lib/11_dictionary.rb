@@ -41,7 +41,7 @@ class Dictionary
   		{}
   end
 
-  #This code is yucky - fix it!
+  # I'm sure there's a cleaner way to do this, but it works...
   def printable()
   		output = []
   		output_s = ""
