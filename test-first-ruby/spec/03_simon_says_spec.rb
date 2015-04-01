@@ -91,6 +91,9 @@ describe "Simon says" do
     it "does capitalize 'little words' at the start of a title" do
       titleize("the bridge over the river kwai").should == "The Bridge over the River Kwai"
     end
-  end
 
+    it "handles a book title with a hyphen" do 
+      titleize("the curious incident of the dog in the night-time").should == "The Curious Incident of the Dog in the Night-Time"
+    end
+  end
 end

@@ -20,14 +20,13 @@ def translate_word(word)
 	
 	# Test to see if the word is capitalized, if it is, store is_cap as true and downcase the word. This won't work for stuff like "eBay" :(
 	
-	#byebug
 	is_cap = false
 	if word.first == word.first.upcase
 		is_cap = true
 		word.map!{|char| char.downcase}
 	end
 
-	# This while away obviously isn't desireable - there should be a way I can do this w/ gsub or something else is cleaner. Come back to this later.
+	# There should be a way I can do this w/ gsub or something else that is cleaner. Maybe come back to this later.
 	idx = 0
 	while idx < word.length
 		if idx != word.length - 1 && word[idx] == "q" && word[idx + 1] == "u"
@@ -40,7 +39,7 @@ def translate_word(word)
 	end
 	
 	# Do the translation itself and retun the word
-	# Test to see if is_cap is true, if it is, then we capitalize the first letter of the word we return
+	# Test to see if is_cap is true, if it is, then we capitalize the first letter of the word we return. Basically, it keeps stepping through until it hits a vowel, building the suffix by shifting off the prefix as it does this. Then, it builds the word once a vowel is hit.
 	piggy = ""
 	word.each do |letter|
 		if vowels.include?(letter)
