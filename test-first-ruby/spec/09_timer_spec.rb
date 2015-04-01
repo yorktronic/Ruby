@@ -18,6 +18,11 @@ describe "Timer" do
     @timer.seconds.should == 0
   end
 
+  it "should be initialized to whatever you want when creating the timer" do
+    @timer2 = Timer.new(5)
+    @timer2.seconds.should == 5
+  end
+
   # One way to implement the Timer is with a helper method.
   # Uncomment these specs if you want to test-drive that
   # method, then call that method from inside of time_string.

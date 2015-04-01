@@ -1,6 +1,11 @@
 class Timer
-	def seconds(seconds = 0)
+	
+	def initialize(seconds = 0)
 		@seconds = seconds
+	end
+
+	def seconds
+		@seconds
 	end
 
 	def seconds=(seconds)
