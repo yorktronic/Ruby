@@ -19,6 +19,7 @@ class XmlDocument
 	#	"<#{tag_name}/>"
 	#end
 	#for this problem, I got stuck  on the "renders block with text inside" test - I couldn't figure out how to use the text that is after the do statement...
+	# Now I know I just need to use block.call - I can finish this, even though it's not required as pre-work
 	def method_missing(name, args = nil, &block)
 			if block
 				return "<#{name}><#{name}>"
