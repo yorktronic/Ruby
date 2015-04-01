@@ -20,9 +20,8 @@ def first_word(words)
 	words.split(" ")[0]
 end
 
-# I found a list of "stopwords" online and have modified it to work with this method. It's likely there are some words in the file that maybe shouldn't be there. Also, titleize doesn't handle dashes yet.
 def titleize(words)
-	stopwords = File.readlines("lib/common-english-words.txt").join.split(',')
+	stopwords = File.readlines("lib/dont_cap.txt").join.split(',')
 	titlewords = words.split(" ")
 	return titlewords[0].capitalize if titlewords.count == 1
 	titlewords.map.with_index{|word, idx| 
