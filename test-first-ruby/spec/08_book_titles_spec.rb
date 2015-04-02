@@ -72,5 +72,17 @@ describe Book do
         @book.title.should == "The Man in the Iron Mask"
       end
     end
+
+    describe 'properly capitalizes titles with...' do
+      specify 'hyphens' do
+        @book.title = "the curious incident of the dog in the night-time"
+        @book.title.should == "The Curious Incident of the Dog in the Night-Time"
+      end
+
+      specify 'punctuation within the title' do
+        @book.title = "the war that forged a nation: why the civil war still matters"
+        @book.title.should == "The War That Forged a Nation: Why the Civil War Still Matters"
+      end
+    end
   end
 end

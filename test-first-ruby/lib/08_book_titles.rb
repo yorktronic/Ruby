@@ -1,5 +1,5 @@
 class Book
-	$dont_cap = File.readlines("./lib/dont_cap.txt").join.split(',')
+	$dont_cap = File.readlines("lib/dont_cap.txt").join.split(',')
 	
 	def title
 		@title 
@@ -7,10 +7,15 @@ class Book
 
 	def title=(title)
 		words = title.split(" ")
-		#@title = title.capitalize if words.count == 1
+		
 		@title = words.map.with_index {|word, idx|
 			if !$dont_cap.include?(word) || idx == 0
-				word.capitalize
+				#Handling titles with dashes
+				if word.include?("-")
+					word.split("-").map! {|w| w.capitalize if !$dont_cap.include?(word) }.join("-")
+				else
+					word.capitalize
+				end
 			else
 				word
 			end
