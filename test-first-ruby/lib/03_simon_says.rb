@@ -7,9 +7,7 @@ def shout(words)
 end
 
 def repeat(word, times=2)
-	repeats = []
-	times.times {repeats << word}
-	repeats.join(" ")
+	((word+" ")*times).rstrip
 end
 
 def start_of_word(word, idx)
@@ -23,9 +21,10 @@ end
 def titleize(words)
 	stopwords = File.readlines("lib/dont_cap.txt").join.split(',')
 	titlewords = words.split(" ")
-	return titlewords[0].capitalize if titlewords.count == 1
+
 	titlewords.map.with_index{|word, idx| 
 		if !stopwords.include?(word) || idx == 0
+			#Handling words with dashes
 			if word.include?("-")
 				word.split("-").map! {|w| w.capitalize if !stopwords.include?(word) }.join("-")
 			else
@@ -35,4 +34,5 @@ def titleize(words)
 			word
 		end
 	}.join(" ")
+	
 end

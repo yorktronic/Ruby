@@ -95,5 +95,12 @@ describe "Simon says" do
     it "handles a book title with a hyphen" do 
       titleize("the curious incident of the dog in the night-time").should == "The Curious Incident of the Dog in the Night-Time"
     end
+
+    it "hanldes titles with punctuation" do
+      titleize("mars attacks!").should == "Mars Attacks!"
+      titleize("the war that forged a nation: why the civil war still matters").should == "The War That Forged a Nation: Why the Civil War Still Matters"
+    end
+
+
   end
 end
