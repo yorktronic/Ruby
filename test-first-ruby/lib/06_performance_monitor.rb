@@ -1,15 +1,27 @@
-# I think I had to seek help online for this one - at the time I didn't fully understand block.call / yield so I had trouble figuring out some of the tests. I also got stuck at one point because I was doing something stupid like dividing the each run time by the number of runs, rather than dividing the total run time by number of runs in order to get the average.
-def measure(i = nil)
+# I think I had to seek help online for this one - for some reason what I learned at the end of Chris Pine's book escaped me and I forgot the syntax for block calls and yield. Like Mr. Pine, I don't really like the yield syntax, so I prefer to use block.call
+#
+def measure(i = nil, &block)
 	startTime = Time.now
-	run = 1
+	# Set run to 1 for the case where rspec doesn't specify the number of runs to take, so that we aren't dividing by 1 or nil at the end.
+	#
+	runs = 1
+	
+	# Call the block if the number of runs isn't specified
+	#
 	if i == nil
-		yield
+		block.call
+		
+	# Call the block i times if the number of runs is specified, and keep track of the numbe of runs to calculate the average at the end
+	#
 	else
-		run = 0
+		runs = 0
 		i.times do
-			yield
-			run += 1
+			block.call
+			runs += 1
 		end
 	end
-	(Time.now - startTime) / run.to_f
+
+	# Calculate the average run time and return it
+	# 
+	(Time.now - startTime) / runs.to_f
 end
