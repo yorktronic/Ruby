@@ -8,10 +8,14 @@ def reverser()
 	yield.split(" ").map! {|word| word.reverse}.join(" ")
 end
 
+# Adds one to the block if num is unspecified, otherwise adds num to block
+#
 def adder(num = 1)
 	yield + num
 end
 
+# Repeats the block n number of times
+#
 def repeater(n = 1)
 	n.times {yield}
 end
