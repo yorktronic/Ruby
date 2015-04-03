@@ -1,4 +1,4 @@
-# I think I had to seek help online for this one - for some reason what I learned at the end of Chris Pine's book escaped me and I forgot the syntax for block calls and yield. Like Mr. Pine, I don't really like the yield syntax, so I prefer to use block.call
+# I think I had to seek help online for this one - for some reason what I learned at the end of Chris Pine's book escaped me and I forgot the syntax for block calls and yield. Like Mr. Pine, sometimes I like to use block.call instead of yield. Stupidly, I was also calculating the average on the fly rather than at the end, which resulted in calculation errors. It's all fixed now!
 #
 def measure(i = nil, &block)
 	startTime = Time.now
@@ -11,7 +11,7 @@ def measure(i = nil, &block)
 	if i == nil
 		block.call
 		
-	# Call the block i times if the number of runs is specified, and keep track of the numbe of runs to calculate the average at the end
+	# Call the block i times if the number of runs is specified, and keep track of the number of runs to calculate the average at the end
 	#
 	else
 		runs = 0
