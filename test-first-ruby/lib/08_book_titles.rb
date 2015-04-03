@@ -18,7 +18,7 @@ class Book
 		
 		@title = words.map.with_index {|word, idx|
 			if cap?(word) || idx == 0
-				# If a word isn't in the don't cap list, we capitalize it, but first we need to see if it has a hyphen and test the sub-words in the hypenated word
+				# If a word isn't in the don't cap list, we capitalize it, but first we need to see if it has a hyphen and test the sub-words in the hypenated word. It will also capitalize any hyphenated word if that word is at the beginning of the title
 				#
 				if word.include?("-")
 					word.split("-").map!.with_index {|w, i| w.capitalize if cap?(word) || i == 0  }.join("-")

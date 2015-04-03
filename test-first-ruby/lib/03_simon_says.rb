@@ -2,6 +2,7 @@
 #
 #
 
+require '08_book_titles'
 # Repeats a word twice
 #
 def echo(words)
@@ -32,24 +33,11 @@ def first_word(words)
 	words.split(" ")[0]
 end
 
-# Capitalizes the appropriate words in a string, given a list of words that should not be captialized (conjuctions, pronouns, etc.) Also includes functionality so that words with dashes can be appropriately capitalized, and ensured punctuation can be handled
+# Uses the Book class created in 08_book_titles.rb, which I kept making tweaks to, instead of reproducing the code here. Hopefully that's okay!
 #
-def titleize(words)
-	stopwords = File.readlines("lib/dont_cap.txt").join.split(',')
-	titlewords = words.split(" ")
-
-	titlewords.map.with_index{|word, idx| 
-		if !stopwords.include?(word) || idx == 0
-			# Handling words with dashes - both the word before and after the dash need to be checked for capitalization 
-			#
-			if word.include?("-")
-				word.split("-").map! {|w| w.capitalize if !stopwords.include?(word) }.join("-")
-			else
-				word.capitalize
-			end
-		else
-			word
-		end
-	}.join(" ")
-	
+def titleize(title)
+	book = Book.new
+	book.title = title
+	return book.title
 end
+
