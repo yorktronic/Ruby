@@ -1,4 +1,4 @@
-# I had to seek help online for this one - for some reason I missed options hashes in the reading, and I had minor trouble with the subclasses. I re-wrote the solution from memory once I understood the concepts.
+# I had to seek help online for this one - for some reason I missed options hashes in the reading, and I had minor trouble with the subclasses. I've re-designed certain areas to be cleaner and more efficient (I think).
 #
 #
 class Temperature
