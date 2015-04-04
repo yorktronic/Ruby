@@ -64,7 +64,7 @@ def translate_word(word)
 	end
 end
 
-# Retaining punctuation... for anything that occurs at the end of the word this is easy, just remove it and then place it at the end of the word after it's piggied (find it, store it, gsub it, add it). The only trick is testing for quotes... add this functionality later
+# Retaining punctuation... for anything that occurs at the end of the word this is easy, just remove it and then place it at the end of the word after it's piggied (find it, store it, gsub it, add it). The only trick is testing for quotes and dashes... add this functionality later
 #
 def punctuate(word)
 	ender = ""
