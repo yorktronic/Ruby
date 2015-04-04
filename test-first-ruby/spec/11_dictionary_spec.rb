@@ -59,10 +59,11 @@ describe Dictionary do
     @d.find('fish').should == {'fish' => 'aquatic animal'}
   end
 
-  it 'finds multiple matches from a prefix and returns the entire entry (keyword + definition)' do
+  it 'finds multiple matches from a prefix and returns the entire entry (keyword + definition), but does not return words that have a match only in the middle of the word' do
     @d.add('fish' => 'aquatic animal')
     @d.add('fiend' => 'wicked person')
     @d.add('great' => 'remarkable')
+    @d.add('refinance' => 'change the financing agreement for a better interest rate')
     @d.find('fi').should == {'fish' => 'aquatic animal', 'fiend' => 'wicked person'}
   end
 

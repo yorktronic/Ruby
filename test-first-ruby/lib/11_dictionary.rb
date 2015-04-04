@@ -34,18 +34,20 @@ class Dictionary
   		end
   end
 
-  # 
-
+  # Returns true if the hash contains a given entry
+  #
   def include?(key)
   		return true if @entries.has_key?(key)
   		false
   end
 
+  # Checks for matches at the beginning of each entry, only up to and including the number of leading characters that are within the passed in key. I.e when key = 'fi', 'fiend' and 'fierce' would be returned, but 'refinance' would not. 
+  #
   def find(key)
   		search_results = {}
   		found = false
-  		@entries.each do |entry, definition|
-  			if entry.include?(key)
+      @entries.each do |entry, definition|
+  			if entry[0..key.length-1].include?(key)
   				found = true
   				search_results[entry] = definition if entry.include?(key)
   			end
@@ -54,7 +56,8 @@ class Dictionary
   		{}
   end
 
-  # I'm sure there's a cleaner way to do this, but it works...
+  # Creates an output that is easier on the eyes. Sorts the output before presenting it to the user.
+  #
   def printable()
   		output = []
   		output_s = ""
