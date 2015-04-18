@@ -13,6 +13,12 @@
 # Difficulty: medium.
 
 def is_prime?(number)
+	smallprimes = [2, 3]
+	return true if smallprimes.include?(number)
+	(1..number).each do |num|
+		return false if (number % num) == 0
+	end
+	true
 end
 
 # These are tests to check that your code is working. After writing

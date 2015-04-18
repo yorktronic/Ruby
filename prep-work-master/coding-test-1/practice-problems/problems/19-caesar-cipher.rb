@@ -24,6 +24,26 @@
 # information, we would not give it to you on the timed challenge. :-)
 
 def caesar_cipher(offset, string)
+	# convert in to an array of words
+	words = string.split(" ")
+	coded_words = []
+	words.each do |word|
+		chars = word.split('')
+		coded_word = ""
+		chars.each do |c|
+			code = c.ord + offset
+			(code += 96 - 122) if code > 122
+			coded_word << code
+		end
+		coded_words << coded_word
+	end
+	return coded_words.join(" ")
+
+	
+	# parse through each letter, converting it
+	# make sure to check if the converted character's code is greater than 122 - if it is then add it to 97 to get the wrap around letter
+
+
 end
 
 # These are tests to check that your code is working. After writing
@@ -31,9 +51,9 @@ end
 
 puts(
   'caesar_cipher(3, "abc") == "def": ' +
-  (caesar_cipher(3, 'abc') == 'def').to_s
+  (caesar_cipher(3, 'abc') == 'def').to_s + ', got: ' + caesar_cipher(3, 'abc')
 )
 puts(
   'caesar_cipher(3, "abc xyz") == "def abc": ' +
-  (caesar_cipher(3, 'abc xyz') == 'def abc').to_s
+  (caesar_cipher(3, 'abc xyz') == 'def abc').to_s + ', got: ' + caesar_cipher(3, 'abc xyz')
 )

@@ -23,6 +23,14 @@ def is_prime?(number)
 end
 
 def nth_prime(n)
+  primes = []
+  num = 1
+  #builds an array of prime numbers up to and including the nth prime number
+  while primes.count < n
+    primes << num if is_prime?(num) == true
+    num += 1
+  end
+  primes.last
 end
 
 # These are tests to check that your code is working. After writing

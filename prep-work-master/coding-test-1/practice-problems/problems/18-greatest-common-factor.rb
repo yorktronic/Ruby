@@ -5,6 +5,13 @@
 # Difficulty: medium.
 
 def greatest_common_factor(number1, number2)
+	denom = 1
+	ans = 1
+	while denom <= number1 && denom <= number2
+		ans = denom if (number1 % denom == 0) && (number2 % denom == 0)
+		denom += 1
+	end
+	ans
 end
 
 # These are tests to check that your code is working. After writing

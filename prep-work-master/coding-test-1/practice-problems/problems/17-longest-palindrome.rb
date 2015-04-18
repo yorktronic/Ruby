@@ -30,6 +30,20 @@ def palindrome?(string)
 end
 
 def longest_palindrome(string)
+  idx = 0
+  palindromes = []
+  substring = ""
+  return string if palindrome?(string)
+  while idx < string.length - 2
+    idy = idx + 1
+    while idy < string.length
+      substring = string.slice(idx,idy)
+      palindromes << substring if palindrome?(substring)
+      idy += 1
+    end
+    idx += 1
+  end
+  return palindromes.max_by(&:length)
 end
 
 # These are tests to check that your code is working. After writing
