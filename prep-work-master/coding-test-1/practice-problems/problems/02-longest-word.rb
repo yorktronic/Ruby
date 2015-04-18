@@ -5,8 +5,15 @@
 # You may use the String `split` method to aid you in your quest.
 #
 # Difficulty: easy.
-
 def longest_word(sentence)
+	words = sentence.split(" ")
+	longest = "a"
+	words.each do |word|
+		if word.length > longest.length
+			longest = word
+		end
+	end
+	longest
 end
 
 # These are tests to check that your code is working. After writing
@@ -24,3 +31,4 @@ puts(
   'longest_word("abc def abcde") == "abcde": ' +
   (longest_word('abc def abcde') == 'abcde').to_s
 )
+

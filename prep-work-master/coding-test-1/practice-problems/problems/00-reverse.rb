@@ -6,6 +6,11 @@
 # Difficulty: easy.
 
 def reverse(string)
+	answer = []
+	string.split('').each do |char|
+		answer.unshift(char)
+	end
+	answer.join('')
 end
 
 # These are tests to check that your code is working. After writing

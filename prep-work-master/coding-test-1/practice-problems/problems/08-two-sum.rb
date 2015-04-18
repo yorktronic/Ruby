@@ -3,8 +3,17 @@
 # If no pair of numbers sums to zero, return `nil`.
 #
 # Difficulty: medium.
-
 def two_sum(nums)
+	nums.each_with_index do |num, idx|
+		idy = 0
+		while idy < nums.length - 1
+			if num + nums[idy] == 0
+				return [idy, idx]
+			end
+			idy += 1
+		end
+	end
+	nil
 end
 
 # These are tests to check that your code is working. After writing

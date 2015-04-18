@@ -4,6 +4,11 @@
 # Difficulty: easy.
 
 def sum_nums(num)
+	ans = 0
+	(1..num).each do |n|
+		ans += n
+	end
+	ans
 end
 
 # These are tests to check that your code is working. After writing

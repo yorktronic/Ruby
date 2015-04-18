@@ -6,6 +6,12 @@
 # Difficulty: easy.
 
 def factorial(n)
+	1 if n == 0 || n == 1
+	ans = 1
+	(1..n).each do |i|
+		ans *= i
+	end
+	ans
 end
 
 # These are tests to check that your code is working. After writing

@@ -4,6 +4,10 @@
 # Difficulty: easy.
 
 def time_conversion(minutes)
+	hours = minutes / 60
+	minutes = minutes % 60
+	minutes = "00" if minutes == 0
+	"#{hours}:#{minutes}"
 end
 
 # These are tests to check that your code is working. After writing

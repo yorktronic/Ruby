@@ -5,6 +5,14 @@
 # Difficulty: easy.
 
 def count_vowels(string)
+	v = ["a","e","i","o","u"]
+	count = 0
+	string.split("").each do |c|
+		if v.include?(c)
+			count += 1
+		end
+	end
+	count
 end
 
 # These are tests to check that your code is working. After writing

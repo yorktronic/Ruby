@@ -8,6 +8,12 @@
 # Difficulty: medium.
 
 def is_power_of_two?(num)
+	sq_test = 1
+	while sq_test <= num
+		return true if sq_test == num || num == 1
+		sq_test*=2
+	end
+	false
 end
 
 # These are tests to check that your code is working. After writing
