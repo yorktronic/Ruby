@@ -12,6 +12,11 @@ require 'rspec'
 # Difficulty: 2/5
 
 describe "#ordered_vowel_words" do
+  it "has a helper function that works" do
+    ordered_vowel_word?("amends").should == true
+    ordered_vowel_word?("complicated").should == false
+  end
+
   it "returns a word that is in order" do
     ordered_vowel_words("amends").should == "amends"
   end

@@ -15,6 +15,10 @@ require 'rspec'
 # Difficulty: 2/5
 
 describe "#morse_encode" do
+  it "has a helper function that works" do
+  	morse_encode_word("q").should == "--.-"
+  end
+
   it "should do a simple letter" do
     morse_encode("q").should == "--.-"
   end

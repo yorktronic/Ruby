@@ -12,6 +12,11 @@ require 'rspec'
 
 
 describe "#no_repeats" do
+  it "has a helper function that works" do 
+    no_repeat?(1234).should == true
+    no_repeat?(1224).should == false
+  end
+
   it "should return a no repeat year" do
     no_repeats(1234, 1234).should == [1234]
   end
