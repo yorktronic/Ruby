@@ -16,6 +16,7 @@ require 'rspec'
 # Difficulty: 4/5
 
 describe "#rectangle_intersection" do
+
   it "handles a simple case" do
     rec_intersection(
       [[0, 0], [2, 1]],

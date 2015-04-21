@@ -1,5 +1,10 @@
 def morse_encode(str)
-
+	str = str.split(' ')
+	coded = []
+	str.each do |word|
+		coded << morse_encode_word(word)
+	end
+	coded.join('  ')
 end
 
 def morse_encode_word(str)
