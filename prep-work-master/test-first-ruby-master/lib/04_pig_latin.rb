@@ -14,22 +14,5 @@ def translate_word(word)
 	byebug
 	vowels = ["a","e","i","o","u"]
 	word = word.split("")
-	if vowels.include?(word[0])
-		return (word.join("") << "ay")
-	else
-		cons_sound = []
-		word.each_with_index do |char,idx|
-			if (idx < word.length - 1) && (char == "q") && word[idx + 1] == "u"
-				cons_sound << word.shift
-				cons_sound << word.shift
-			end
-			if !vowels.include?(char)
-				cons_sound << word.shift
-			else
-				return (word.join("") << cons_sound.join("") << "ay")
-			end
-		end
-	end
+	
 end
-
-p translate_word("banana")
