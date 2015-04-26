@@ -1,4 +1,4 @@
-def leap_years(start, ending)
+def leap_years()
 	p "Please enter a start year"
 	start = (gets.chomp).to_i
 	p "Please enter an ending year"
