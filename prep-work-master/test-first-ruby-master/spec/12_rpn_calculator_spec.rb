@@ -86,6 +86,20 @@ describe RPNCalculator do
     calculator.value.should == 1
   end
 
+  it "multiplies" do
+    calculator.push(5)
+    calculator.push(6)
+    calculator.times
+    calculator.value.should == 30
+  end
+
+  it "divides" do
+    calculator.push(10)
+    calculator.push(2)
+    calculator.divide
+    calculator.value.should == 5
+  end
+  
   it "multiplies and divides" do
     calculator.push(2)
     calculator.push(3)
