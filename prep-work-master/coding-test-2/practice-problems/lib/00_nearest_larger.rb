@@ -4,10 +4,14 @@ def nearest_larger(arr, idx)
 	while true
 		left = idx - dif
 		right = idx + dif
-		return left if ((left >= 0) && (arr[left] > arr[idx]))
-		return right if (right <= arr.length - 1) && ((arr[right] > arr[idx]))
-		return nil if (left < 0) && (right > arr.length - 1)
+
+		if (left >= 0 && arr[left] > arr[idx])
+			return left
+		elsif (right <= arr.length - 1 && arr[right] > arr[idx])
+			return right
+		elsif (right > arr.length - 1 && left < 0)
+			return nil
+		end
 		dif += 1
 	end
-
 end
