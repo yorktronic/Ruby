@@ -1,24 +1,16 @@
 class Array
-
 	def sum
-		return 0 if self.empty?
-		self.inject{|sum,n| sum + n}
+		return 0 if self == []
+		self.inject(:+)
 	end
 
 	def square
-		return [] if self.empty?
-		squares = []
-		self.each do |i|
-			squares << i**2
-		end
-		squares
+		return self if self == []
+		self.map{|n| n**2}
 	end
 
 	def square!
-		return [] if self.empty?
-		self.map! do |i|
-			i**2
-		end
-		self
+		return self if self == []
+		self.map!{|n| n**2}
 	end
 end
