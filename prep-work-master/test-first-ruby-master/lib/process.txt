@@ -1,0 +1,36 @@
+START YOUR TIMER
+
+Read the problem. Make sure you understand what it's looking for and what the output is
+
+
+Determine what your input is - make sure you understand the format 
+
+
+Determine what your output should be - write a comment to make sure that you actually return the output :)
+
+
+Define your assumptions / concepts on how to solve the problem. Briefly, but in sufficient detail.
+
+
+At every step along the way where you pause to wonder what to do, WRITE DOWN what you plan on doing.
+
+
+Whenever necessary, create a variable or data structure to store something if it's confusing or cumbersome to calculate, pull, whatever
+
+
+YOU know this shit
+
+
+
+Panicking is not going to help you. Being calm and methodical is
+
+
+
+Take any remaining time you have (lol) to evaluate your code. Do not stop and say you are done until you've used all your time
+
+
+
+If it helps, try to remember a problem that was similar to this problem. How was it similar. Make sure you don't write the wrong solution, though
+
+
+.empty? for an array
